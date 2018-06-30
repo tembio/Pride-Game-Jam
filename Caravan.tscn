@@ -1,0 +1,49 @@
+[gd_scene load_steps=11 format=2]
+
+[ext_resource path="res://Caravan.gd" type="Script" id=1]
+[ext_resource path="res://sprites/caravan1.png" type="Texture" id=2]
+[ext_resource path="res://sprites/caravan2.png" type="Texture" id=3]
+[ext_resource path="res://sprites/caravan3.png" type="Texture" id=4]
+[ext_resource path="res://sprites/caravan4.png" type="Texture" id=5]
+[ext_resource path="res://sprites/caravan5.png" type="Texture" id=6]
+[ext_resource path="res://sprites/caravan6.png" type="Texture" id=7]
+[ext_resource path="res://sprites/caravan7.png" type="Texture" id=8]
+[ext_resource path="res://sprites/caravan8.png" type="Texture" id=9]
+
+[sub_resource type="SpriteFrames" id=1]
+
+animations = [ {
+"frames": [ ExtResource( 2 ) ],
+"loop": true,
+"name": "idle",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 2 ), ExtResource( 3 ), ExtResource( 4 ), ExtResource( 5 ), ExtResource( 6 ), ExtResource( 7 ), ExtResource( 8 ), ExtResource( 9 ) ],
+"loop": true,
+"name": "walk",
+"speed": 10.0
+} ]
+
+[node name="Caravan" type="Area2D" index="0"]
+
+position = Vector2( 50.8613, 266.668 )
+scale = Vector2( 2.25285, 2.39383 )
+input_pickable = true
+gravity_vec = Vector2( 0, 1 )
+gravity = 98.0
+linear_damp = 0.1
+angular_damp = 1.0
+audio_bus_override = false
+audio_bus_name = "Master"
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_group_": true
+}
+speed = 25
+
+[node name="sprite" type="AnimatedSprite" parent="." index="0"]
+
+frames = SubResource( 1 )
+animation = "walk"
+
+

@@ -5,7 +5,7 @@ onready var sprite = get_node("sprite")
 var screensize
 var lookingForward = true
 var animation = "idle"
-var GROUND_LEVEL = 100
+var GROUND_LEVEL = 50
 var isFlying = false
 
 
