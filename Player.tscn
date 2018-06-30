@@ -1,0 +1,76 @@
+[gd_scene load_steps=20 format=2]
+
+[ext_resource path="res://Player.gd" type="Script" id=1]
+[ext_resource path="res://sprites/walk1.png" type="Texture" id=2]
+[ext_resource path="res://sprites/eat_floor1.png" type="Texture" id=3]
+[ext_resource path="res://sprites/eat_floor2.png" type="Texture" id=4]
+[ext_resource path="res://sprites/eat_floor3.png" type="Texture" id=5]
+[ext_resource path="res://sprites/eat_floor4.png" type="Texture" id=6]
+[ext_resource path="res://sprites/eat1.png" type="Texture" id=7]
+[ext_resource path="res://sprites/eat2.png" type="Texture" id=8]
+[ext_resource path="res://sprites/eat3.png" type="Texture" id=9]
+[ext_resource path="res://sprites/eat4.png" type="Texture" id=10]
+[ext_resource path="res://sprites/eat5.png" type="Texture" id=11]
+[ext_resource path="res://sprites/eat6.png" type="Texture" id=12]
+[ext_resource path="res://sprites/walk2.png" type="Texture" id=13]
+[ext_resource path="res://sprites/walk3.png" type="Texture" id=14]
+[ext_resource path="res://sprites/fly1.png" type="Texture" id=15]
+[ext_resource path="res://sprites/fly2.png" type="Texture" id=16]
+[ext_resource path="res://sprites/fly3.png" type="Texture" id=17]
+[ext_resource path="res://sprites/fly4.png" type="Texture" id=18]
+
+[sub_resource type="SpriteFrames" id=1]
+
+animations = [ {
+"frames": [ ExtResource( 2 ) ],
+"loop": true,
+"name": "idle",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 3 ), ExtResource( 4 ), ExtResource( 5 ), ExtResource( 6 ), ExtResource( 3 ) ],
+"loop": true,
+"name": "eat_floor",
+"speed": 10.0
+}, {
+"frames": [ ExtResource( 7 ), ExtResource( 8 ), ExtResource( 9 ), ExtResource( 10 ), ExtResource( 11 ), ExtResource( 12 ), ExtResource( 11 ), ExtResource( 10 ), ExtResource( 9 ), ExtResource( 8 ) ],
+"loop": true,
+"name": "eat",
+"speed": 15.02
+}, {
+"frames": [ ExtResource( 2 ), ExtResource( 13 ), ExtResource( 14 ) ],
+"loop": true,
+"name": "walk",
+"speed": 10.01
+}, {
+"frames": [ ExtResource( 15 ), ExtResource( 16 ), ExtResource( 17 ), ExtResource( 18 ), ExtResource( 17 ), ExtResource( 16 ), ExtResource( 15 ) ],
+"loop": true,
+"name": "fly",
+"speed": 15.0
+} ]
+
+[node name="Player" type="Area2D" index="0"]
+
+position = Vector2( 509.638, 285.915 )
+scale = Vector2( 1.98069, 2.01971 )
+input_pickable = true
+gravity_vec = Vector2( 0, 1 )
+gravity = 98.0
+linear_damp = 0.1
+angular_damp = 1.0
+audio_bus_override = false
+audio_bus_name = "Master"
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_group_": true
+}
+speed = 200
+
+[node name="sprite" type="AnimatedSprite" parent="." index="0"]
+
+position = Vector2( -0.504874, 0 )
+frames = SubResource( 1 )
+animation = "idle"
+
+[connection signal="animation_finished" from="sprite" to="." method="_on_sprite_animation_finished"]
+
+
