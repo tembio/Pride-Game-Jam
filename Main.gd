@@ -6,6 +6,7 @@ var touchingSeed = false
 func _ready():
     $Music.play()
     $Player.hide()
+    $Water/sprite.play("default")
 
 func _process(delta):
     if $Player.animation == "eat_floor" and touchingSeed:
