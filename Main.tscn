@@ -1,19 +1,26 @@
-[gd_scene load_steps=16 format=2]
+[gd_scene load_steps=25 format=2]
 
 [ext_resource path="res://Main.gd" type="Script" id=1]
 [ext_resource path="res://Player.tscn" type="PackedScene" id=2]
 [ext_resource path="res://sprites/Ground_2.png" type="Texture" id=3]
 [ext_resource path="res://sprites/grassyFloor.png" type="Texture" id=4]
-[ext_resource path="res://sprites/sky.png" type="Texture" id=5]
-[ext_resource path="res://sprites/gate.png" type="Texture" id=6]
-[ext_resource path="res://sprites/column.png" type="Texture" id=7]
-[ext_resource path="res://sprites/grass.png" type="Texture" id=8]
-[ext_resource path="res://sprites/grass_small1.png" type="Texture" id=9]
-[ext_resource path="res://sprites/grass_small2.png" type="Texture" id=10]
-[ext_resource path="res://sprites/column_thin.png" type="Texture" id=11]
-[ext_resource path="res://sprites/bigRock.png" type="Texture" id=12]
-[ext_resource path="res://Seed.tscn" type="PackedScene" id=13]
-[ext_resource path="res://Slightly mysterious BGM.ogg" type="AudioStream" id=14]
+[ext_resource path="res://sprites/tile_grass.png" type="Texture" id=5]
+[ext_resource path="res://sprites/rock_grey6.png" type="Texture" id=6]
+[ext_resource path="res://sprites/sky.png" type="Texture" id=7]
+[ext_resource path="res://sprites/gate.png" type="Texture" id=8]
+[ext_resource path="res://sprites/column.png" type="Texture" id=9]
+[ext_resource path="res://sprites/grass.png" type="Texture" id=10]
+[ext_resource path="res://sprites/grass_small1.png" type="Texture" id=11]
+[ext_resource path="res://sprites/grass_small2.png" type="Texture" id=12]
+[ext_resource path="res://sprites/column_thin.png" type="Texture" id=13]
+[ext_resource path="res://sprites/bigRock.png" type="Texture" id=14]
+[ext_resource path="res://Seed.tscn" type="PackedScene" id=15]
+[ext_resource path="res://Slightly mysterious BGM.ogg" type="AudioStream" id=16]
+[ext_resource path="res://sprites/rock_grey5.png" type="Texture" id=17]
+[ext_resource path="res://sprites/rock_grey1.png" type="Texture" id=18]
+[ext_resource path="res://sprites/Water_Fall_2.png" type="Texture" id=19]
+[ext_resource path="res://Snake.tscn" type="PackedScene" id=20]
+[ext_resource path="res://Caravan.tscn" type="PackedScene" id=21]
 
 [sub_resource type="CapsuleShape2D" id=1]
 
@@ -21,187 +28,630 @@ custom_solver_bias = 0.0
 radius = 10.7524
 height = 20.0
 
+[sub_resource type="CircleShape2D" id=2]
+
+custom_solver_bias = 0.0
+radius = 10.0
+
+[sub_resource type="CapsuleShape2D" id=3]
+
+custom_solver_bias = 0.0
+radius = 10.0
+height = 20.0
+
 [node name="Node" type="Node" index="0"]
 
 script = ExtResource( 1 )
 Player = ExtResource( 2 )
 
-[node name="Player" parent="." index="0" instance=ExtResource( 2 )]
-
-position = Vector2( 51.1517, 280.088 )
-z_index = 1
-_sections_unfolded = [ "Z Index" ]
-
-[node name="Sprite" type="Sprite" parent="." index="1"]
+[node name="Sprite" type="Sprite" parent="." index="0"]
 
 position = Vector2( 90.6887, 293.974 )
 texture = ExtResource( 3 )
 
-[node name="Sprite2" type="Sprite" parent="." index="2"]
+[node name="Sprite2" type="Sprite" parent="." index="1"]
 
 position = Vector2( 30.6887, 293.974 )
 texture = ExtResource( 3 )
 
-[node name="Sprite3" type="Sprite" parent="." index="3"]
+[node name="Sprite3" type="Sprite" parent="." index="2"]
 
 position = Vector2( 209.244, 293.914 )
 texture = ExtResource( 3 )
 
-[node name="Sprite4" type="Sprite" parent="." index="4"]
+[node name="Sprite4" type="Sprite" parent="." index="3"]
 
 position = Vector2( 149.962, 293.788 )
 texture = ExtResource( 3 )
 
-[node name="Sprite5" type="Sprite" parent="." index="5"]
+[node name="Sprite5" type="Sprite" parent="." index="4"]
 
 position = Vector2( 328.962, 293.788 )
 texture = ExtResource( 3 )
 
-[node name="Sprite7" type="Sprite" parent="." index="6"]
+[node name="Sprite7" type="Sprite" parent="." index="5"]
 
 position = Vector2( 388.962, 293.788 )
 texture = ExtResource( 3 )
 
-[node name="Sprite8" type="Sprite" parent="." index="7"]
+[node name="Sprite8" type="Sprite" parent="." index="6"]
 
 position = Vector2( 448.962, 293.788 )
 texture = ExtResource( 3 )
 
-[node name="Sprite15" type="Sprite" parent="." index="8"]
+[node name="Sprite15" type="Sprite" parent="." index="7"]
 
 position = Vector2( 748.962, 293.788 )
 texture = ExtResource( 3 )
 
-[node name="Sprite9" type="Sprite" parent="." index="9"]
+[node name="Sprite9" type="Sprite" parent="." index="8"]
 
 position = Vector2( 508.962, 293.788 )
 texture = ExtResource( 3 )
 
-[node name="Sprite16" type="Sprite" parent="." index="10"]
+[node name="Sprite16" type="Sprite" parent="." index="9"]
 
 position = Vector2( 808.962, 293.788 )
 texture = ExtResource( 3 )
 
-[node name="Sprite10" type="Sprite" parent="." index="11"]
+[node name="Sprite10" type="Sprite" parent="." index="10"]
 
 position = Vector2( 568.962, 293.788 )
 texture = ExtResource( 3 )
 
-[node name="Sprite13" type="Sprite" parent="." index="12"]
+[node name="Sprite13" type="Sprite" parent="." index="11"]
 
 position = Vector2( 868.962, 293.788 )
 texture = ExtResource( 4 )
 
-[node name="Sprite18" type="Sprite" parent="." index="13"]
+[node name="Sprite20" type="Sprite" parent="." index="12"]
 
-position = Vector2( 1048.36, 293.788 )
-texture = ExtResource( 3 )
+position = Vector2( 1048.96, 293.788 )
+texture = ExtResource( 4 )
 
-[node name="Sprite22" type="Sprite" parent="." index="14"]
+[node name="Sprite22" type="Sprite" parent="." index="13"]
 
-position = Vector2( 1228.36, 293.788 )
-texture = ExtResource( 3 )
+position = Vector2( 1228.96, 293.788 )
+texture = ExtResource( 4 )
 
-[node name="Sprite11" type="Sprite" parent="." index="15"]
+[node name="Sprite11" type="Sprite" parent="." index="14"]
 
 position = Vector2( 628.962, 293.788 )
 texture = ExtResource( 3 )
 
-[node name="Sprite14" type="Sprite" parent="." index="16"]
+[node name="Sprite14" type="Sprite" parent="." index="15"]
 
 position = Vector2( 928.962, 293.788 )
-texture = ExtResource( 3 )
+texture = ExtResource( 4 )
 
-[node name="Sprite19" type="Sprite" parent="." index="17"]
+[node name="Sprite18" type="Sprite" parent="." index="16"]
 
-position = Vector2( 1108.36, 293.788 )
-texture = ExtResource( 3 )
+position = Vector2( 1108.96, 293.788 )
+texture = ExtResource( 4 )
 
-[node name="Sprite21" type="Sprite" parent="." index="18"]
+[node name="Sprite23" type="Sprite" parent="." index="17"]
 
-position = Vector2( 1288.36, 293.788 )
-texture = ExtResource( 3 )
+position = Vector2( 1288.96, 293.788 )
+texture = ExtResource( 4 )
 
-[node name="Sprite12" type="Sprite" parent="." index="19"]
+[node name="Sprite12" type="Sprite" parent="." index="18"]
 
 position = Vector2( 688.962, 293.788 )
 texture = ExtResource( 3 )
 
-[node name="Sprite17" type="Sprite" parent="." index="20"]
+[node name="Sprite17" type="Sprite" parent="." index="19"]
 
 position = Vector2( 988.962, 293.788 )
 texture = ExtResource( 4 )
 
-[node name="Sprite20" type="Sprite" parent="." index="21"]
+[node name="Sprite19" type="Sprite" parent="." index="20"]
 
-position = Vector2( 1168.36, 293.788 )
-texture = ExtResource( 3 )
+position = Vector2( 1168.96, 293.788 )
+texture = ExtResource( 5 )
 
-[node name="Sprite6" type="Sprite" parent="." index="22"]
+[node name="Sprite24" type="Sprite" parent="." index="21"]
+
+position = Vector2( 1228.96, 293.788 )
+texture = ExtResource( 5 )
+
+[node name="Sprite25" type="Sprite" parent="." index="22"]
+
+position = Vector2( 1288.96, 293.788 )
+texture = ExtResource( 5 )
+
+[node name="Sprite26" type="Sprite" parent="." index="23"]
+
+position = Vector2( 1348.96, 293.788 )
+texture = ExtResource( 5 )
+
+[node name="Sprite6" type="Sprite" parent="." index="24"]
 
 position = Vector2( 268.962, 293.788 )
 texture = ExtResource( 3 )
 
-[node name="Sky" type="Sprite" parent="." index="23"]
+[node name="rock6" type="Sprite" parent="." index="25"]
+
+position = Vector2( 1020.25, 289.48 )
+z_index = 1
+texture = ExtResource( 6 )
+_sections_unfolded = [ "Offset", "Z Index" ]
+
+[node name="rock8" type="Sprite" parent="." index="26"]
+
+position = Vector2( 1063.25, 302.48 )
+z_index = 1
+texture = ExtResource( 6 )
+_sections_unfolded = [ "Offset", "Z Index" ]
+
+[node name="rock13" type="Sprite" parent="." index="27"]
+
+position = Vector2( 1098.25, 296.48 )
+z_index = 1
+texture = ExtResource( 6 )
+_sections_unfolded = [ "Offset", "Z Index" ]
+
+[node name="rock14" type="Sprite" parent="." index="28"]
+
+position = Vector2( 1135.25, 290.48 )
+z_index = 1
+texture = ExtResource( 6 )
+_sections_unfolded = [ "Offset", "Z Index" ]
+
+[node name="rock15" type="Sprite" parent="." index="29"]
+
+position = Vector2( 1147.65, 266.738 )
+scale = Vector2( 0.531723, 0.458069 )
+texture = ExtResource( 6 )
+_sections_unfolded = [ "Offset", "Z Index" ]
+
+[node name="rock16" type="Sprite" parent="." index="30"]
+
+modulate = Color( 0.803497, 0.882812, 0.873518, 1 )
+position = Vector2( 1189.01, 262.918 )
+scale = Vector2( 0.33742, 0.285387 )
+texture = ExtResource( 6 )
+_sections_unfolded = [ "Offset", "Z Index" ]
+
+[node name="rock21" type="Sprite" parent="." index="31"]
+
+modulate = Color( 0.803497, 0.882812, 0.873518, 1 )
+position = Vector2( 1220.01, 265.918 )
+scale = Vector2( 0.33742, 0.285387 )
+texture = ExtResource( 6 )
+_sections_unfolded = [ "Offset", "Z Index" ]
+
+[node name="rock25" type="Sprite" parent="." index="32"]
+
+modulate = Color( 0.803497, 0.882812, 0.873518, 1 )
+position = Vector2( 1247.01, 265.918 )
+scale = Vector2( 0.33742, 0.285387 )
+texture = ExtResource( 6 )
+_sections_unfolded = [ "Offset", "Z Index" ]
+
+[node name="rock28" type="Sprite" parent="." index="33"]
+
+modulate = Color( 0.803497, 0.882812, 0.873518, 1 )
+position = Vector2( 1269.01, 265.918 )
+scale = Vector2( 0.33742, 0.285387 )
+texture = ExtResource( 6 )
+_sections_unfolded = [ "Offset", "Z Index" ]
+
+[node name="rock20" type="Sprite" parent="." index="34"]
+
+modulate = Color( 0.803497, 0.882812, 0.873518, 1 )
+position = Vector2( 1210.01, 262.918 )
+scale = Vector2( 0.33742, 0.285387 )
+texture = ExtResource( 6 )
+flip_h = true
+_sections_unfolded = [ "Offset", "Z Index" ]
+
+[node name="rock23" type="Sprite" parent="." index="35"]
+
+modulate = Color( 0.803497, 0.882812, 0.873518, 1 )
+position = Vector2( 1242.01, 262.918 )
+scale = Vector2( 0.33742, 0.285387 )
+texture = ExtResource( 6 )
+flip_h = true
+_sections_unfolded = [ "Offset", "Z Index" ]
+
+[node name="rock26" type="Sprite" parent="." index="36"]
+
+modulate = Color( 0.803497, 0.882812, 0.873518, 1 )
+position = Vector2( 1268.01, 265.918 )
+scale = Vector2( 0.33742, 0.285387 )
+texture = ExtResource( 6 )
+flip_h = true
+_sections_unfolded = [ "Offset", "Z Index" ]
+
+[node name="rock29" type="Sprite" parent="." index="37"]
+
+modulate = Color( 0.803497, 0.882812, 0.873518, 1 )
+position = Vector2( 1290.01, 265.918 )
+scale = Vector2( 0.33742, 0.285387 )
+texture = ExtResource( 6 )
+flip_h = true
+_sections_unfolded = [ "Offset", "Z Index" ]
+
+[node name="rock17" type="Sprite" parent="." index="38"]
+
+modulate = Color( 0.803497, 0.882812, 0.873518, 1 )
+position = Vector2( 1165.19, 265.518 )
+scale = Vector2( 0.313713, 0.238714 )
+texture = ExtResource( 6 )
+_sections_unfolded = [ "Offset", "Z Index" ]
+
+[node name="rock18" type="Sprite" parent="." index="39"]
+
+modulate = Color( 0.803497, 0.882812, 0.873518, 1 )
+position = Vector2( 1179.58, 263.518 )
+scale = Vector2( 0.313713, 0.238714 )
+texture = ExtResource( 6 )
+_sections_unfolded = [ "Offset", "Z Index" ]
+
+[node name="rock19" type="Sprite" parent="." index="40"]
+
+modulate = Color( 0.803497, 0.882812, 0.873518, 1 )
+position = Vector2( 1200.58, 263.518 )
+scale = Vector2( 0.313713, 0.238714 )
+texture = ExtResource( 6 )
+flip_h = true
+_sections_unfolded = [ "Offset", "Z Index" ]
+
+[node name="rock22" type="Sprite" parent="." index="41"]
+
+modulate = Color( 0.803497, 0.882812, 0.873518, 1 )
+position = Vector2( 1231.58, 266.518 )
+scale = Vector2( 0.313713, 0.238714 )
+texture = ExtResource( 6 )
+flip_h = true
+_sections_unfolded = [ "Offset", "Z Index" ]
+
+[node name="rock24" type="Sprite" parent="." index="42"]
+
+modulate = Color( 0.803497, 0.882812, 0.873518, 1 )
+position = Vector2( 1258.58, 266.518 )
+scale = Vector2( 0.313713, 0.238714 )
+texture = ExtResource( 6 )
+flip_h = true
+_sections_unfolded = [ "Offset", "Z Index" ]
+
+[node name="rock27" type="Sprite" parent="." index="43"]
+
+modulate = Color( 0.803497, 0.882812, 0.873518, 1 )
+position = Vector2( 1280.58, 266.518 )
+scale = Vector2( 0.313713, 0.238714 )
+texture = ExtResource( 6 )
+flip_h = true
+_sections_unfolded = [ "Offset", "Z Index" ]
+
+[node name="rock7" type="Sprite" parent="." index="44"]
+
+position = Vector2( 1064.25, 239.48 )
+texture = ExtResource( 6 )
+
+[node name="Sky" type="Sprite" parent="." index="45"]
 
 position = Vector2( 321.25, 136.683 )
 scale = Vector2( 2.5519, 2.27442 )
-z_index = -1
-texture = ExtResource( 5 )
+z_index = -10
+texture = ExtResource( 7 )
 _sections_unfolded = [ "Z Index" ]
 __meta__ = {
 "_edit_group_": true
 }
 
-[node name="Sky2" type="Sprite" parent="." index="24"]
+[node name="Sky2" type="Sprite" parent="." index="46"]
 
-position = Vector2( 974.133, 135.683 )
+position = Vector2( 974.491, 135.683 )
 scale = Vector2( 2.5519, 2.27442 )
-z_index = -1
-texture = ExtResource( 5 )
+z_index = -2
+texture = ExtResource( 7 )
 _sections_unfolded = [ "Z Index" ]
 __meta__ = {
 "_edit_group_": true
 }
 
-[node name="gate" type="Sprite" parent="." index="25"]
+[node name="gate" type="Sprite" parent="." index="47"]
 
-position = Vector2( 83.771, 175.873 )
+position = Vector2( 83.771, 194.289 )
 scale = Vector2( 1.2, 1.2 )
-texture = ExtResource( 6 )
+texture = ExtResource( 8 )
 _sections_unfolded = [ "Transform" ]
 
-[node name="column" type="Sprite" parent="." index="26"]
+[node name="gate2" type="Sprite" parent="." index="48"]
 
-position = Vector2( 224.931, 229.363 )
-texture = ExtResource( 7 )
+modulate = Color( 0.398438, 0.368866, 0.298828, 1 )
+position = Vector2( 718.406, 225.938 )
+scale = Vector2( 0.747061, 0.68954 )
+texture = ExtResource( 8 )
+_sections_unfolded = [ "Material", "Transform", "Visibility" ]
 
-[node name="grass1" type="Sprite" parent="." index="27"]
+[node name="column" type="Sprite" parent="." index="49"]
+
+position = Vector2( 220.931, 237.363 )
+texture = ExtResource( 9 )
+
+[node name="column2" type="Sprite" parent="." index="50"]
+
+modulate = Color( 0.605469, 0.537472, 0.496674, 1 )
+position = Vector2( 297.246, 253.208 )
+scale = Vector2( 0.62379, 0.729541 )
+z_index = -2
+texture = ExtResource( 9 )
+_sections_unfolded = [ "Material", "Visibility", "Z Index" ]
+
+[node name="grass1" type="Sprite" parent="." index="51"]
 
 position = Vector2( 158.84, 305.948 )
-texture = ExtResource( 8 )
-
-[node name="small_grass2" type="Sprite" parent="." index="28"]
-
-position = Vector2( 342.553, 287.421 )
-texture = ExtResource( 9 )
-
-[node name="small_grass1" type="Sprite" parent="." index="29"]
-
-position = Vector2( 402.83, 274.924 )
-texture = ExtResource( 9 )
-
-[node name="small_grass3" type="Sprite" parent="." index="30"]
-
-position = Vector2( 485.161, 260.222 )
 texture = ExtResource( 10 )
 
-[node name="colum_thin" type="Sprite" parent="." index="31"]
+[node name="grass2" type="Sprite" parent="." index="52"]
 
-position = Vector2( 567.491, 205.826 )
+position = Vector2( 648.84, 305.948 )
+texture = ExtResource( 10 )
+
+[node name="small_grass2" type="Sprite" parent="." index="53"]
+
+position = Vector2( 342.553, 287.421 )
 texture = ExtResource( 11 )
 
-[node name="rock" type="StaticBody2D" parent="." index="32"]
+[node name="small_grass6" type="Sprite" parent="." index="54"]
+
+position = Vector2( 893.553, 287.421 )
+texture = ExtResource( 11 )
+
+[node name="small_grass7" type="Sprite" parent="." index="55"]
+
+position = Vector2( 974.553, 310.421 )
+texture = ExtResource( 11 )
+
+[node name="small_grass8" type="Sprite" parent="." index="56"]
+
+position = Vector2( 754.553, 310.421 )
+texture = ExtResource( 11 )
+
+[node name="small_grass9" type="Sprite" parent="." index="57"]
+
+position = Vector2( 1174.55, 310.421 )
+texture = ExtResource( 11 )
+
+[node name="small_grass33" type="Sprite" parent="." index="58"]
+
+position = Vector2( 1174.55, 310.421 )
+texture = ExtResource( 11 )
+
+[node name="small_grass13" type="Sprite" parent="." index="59"]
+
+position = Vector2( 1225.55, 290.421 )
+texture = ExtResource( 11 )
+
+[node name="small_grass18" type="Sprite" parent="." index="60"]
+
+modulate = Color( 0.803497, 0.882812, 0.873518, 1 )
+position = Vector2( 1183.55, 273.421 )
+scale = Vector2( 0.4, 0.4 )
+texture = ExtResource( 11 )
+
+[node name="small_grass26" type="Sprite" parent="." index="61"]
+
+modulate = Color( 0.803497, 0.882812, 0.873518, 1 )
+position = Vector2( 1204.55, 273.421 )
+scale = Vector2( 0.4, 0.4 )
+texture = ExtResource( 11 )
+flip_h = true
+
+[node name="small_grass22" type="Sprite" parent="." index="62"]
+
+modulate = Color( 0.803497, 0.882812, 0.873518, 1 )
+position = Vector2( 1183.55, 273.421 )
+scale = Vector2( 0.4, 0.4 )
+texture = ExtResource( 11 )
+
+[node name="small_grass30" type="Sprite" parent="." index="63"]
+
+modulate = Color( 0.803497, 0.882812, 0.873518, 1 )
+position = Vector2( 1204.55, 273.421 )
+scale = Vector2( 0.4, 0.4 )
+texture = ExtResource( 11 )
+flip_h = true
+
+[node name="small_grass12" type="Sprite" parent="." index="64"]
+
+position = Vector2( 1164.55, 310.421 )
+texture = ExtResource( 11 )
+flip_h = true
+_sections_unfolded = [ "Offset" ]
+
+[node name="small_grass36" type="Sprite" parent="." index="65"]
+
+position = Vector2( 1164.55, 310.421 )
+texture = ExtResource( 11 )
+flip_h = true
+_sections_unfolded = [ "Offset" ]
+
+[node name="small_grass16" type="Sprite" parent="." index="66"]
+
+position = Vector2( 1215.55, 290.421 )
+texture = ExtResource( 11 )
+flip_h = true
+_sections_unfolded = [ "Offset" ]
+
+[node name="small_grass19" type="Sprite" parent="." index="67"]
+
+modulate = Color( 0.803497, 0.882812, 0.873518, 1 )
+position = Vector2( 1173.55, 273.421 )
+scale = Vector2( 0.4, 0.4 )
+texture = ExtResource( 11 )
+flip_h = true
+_sections_unfolded = [ "Offset" ]
+
+[node name="small_grass27" type="Sprite" parent="." index="68"]
+
+modulate = Color( 0.803497, 0.882812, 0.873518, 1 )
+position = Vector2( 1194.55, 273.421 )
+scale = Vector2( 0.4, 0.4 )
+texture = ExtResource( 11 )
+flip_h = true
+_sections_unfolded = [ "Offset" ]
+
+[node name="small_grass23" type="Sprite" parent="." index="69"]
+
+modulate = Color( 0.803497, 0.882812, 0.873518, 1 )
+position = Vector2( 1173.55, 273.421 )
+scale = Vector2( 0.4, 0.4 )
+texture = ExtResource( 11 )
+flip_h = true
+_sections_unfolded = [ "Offset" ]
+
+[node name="small_grass31" type="Sprite" parent="." index="70"]
+
+modulate = Color( 0.803497, 0.882812, 0.873518, 1 )
+position = Vector2( 1194.55, 273.421 )
+scale = Vector2( 0.4, 0.4 )
+texture = ExtResource( 11 )
+flip_h = true
+_sections_unfolded = [ "Offset" ]
+
+[node name="small_grass10" type="Sprite" parent="." index="71"]
+
+position = Vector2( 1186.55, 310.421 )
+texture = ExtResource( 11 )
+flip_h = true
+_sections_unfolded = [ "Offset" ]
+
+[node name="small_grass34" type="Sprite" parent="." index="72"]
+
+position = Vector2( 1186.55, 310.421 )
+texture = ExtResource( 11 )
+flip_h = true
+_sections_unfolded = [ "Offset" ]
+
+[node name="small_grass14" type="Sprite" parent="." index="73"]
+
+position = Vector2( 1238.55, 287.421 )
+texture = ExtResource( 11 )
+flip_h = true
+_sections_unfolded = [ "Offset" ]
+
+[node name="small_grass20" type="Sprite" parent="." index="74"]
+
+modulate = Color( 0.803497, 0.882812, 0.873518, 1 )
+position = Vector2( 1195.55, 273.421 )
+scale = Vector2( 0.4, 0.4 )
+texture = ExtResource( 11 )
+flip_h = true
+_sections_unfolded = [ "Offset" ]
+
+[node name="small_grass28" type="Sprite" parent="." index="75"]
+
+modulate = Color( 0.803497, 0.882812, 0.873518, 1 )
+position = Vector2( 1215.55, 276.421 )
+scale = Vector2( 0.4, 0.4 )
+texture = ExtResource( 11 )
+flip_h = true
+_sections_unfolded = [ "Offset" ]
+
+[node name="small_grass24" type="Sprite" parent="." index="76"]
+
+modulate = Color( 0.803497, 0.882812, 0.873518, 1 )
+position = Vector2( 1195.55, 273.421 )
+scale = Vector2( 0.4, 0.4 )
+texture = ExtResource( 11 )
+flip_h = true
+_sections_unfolded = [ "Offset" ]
+
+[node name="small_grass32" type="Sprite" parent="." index="77"]
+
+modulate = Color( 0.803497, 0.882812, 0.873518, 1 )
+position = Vector2( 1215.55, 276.421 )
+scale = Vector2( 0.4, 0.4 )
+texture = ExtResource( 11 )
+flip_h = true
+_sections_unfolded = [ "Offset" ]
+
+[node name="small_grass11" type="Sprite" parent="." index="78"]
+
+position = Vector2( 1186.55, 310.421 )
+texture = ExtResource( 11 )
+flip_h = true
+_sections_unfolded = [ "Offset" ]
+
+[node name="small_grass35" type="Sprite" parent="." index="79"]
+
+position = Vector2( 1186.55, 310.421 )
+texture = ExtResource( 11 )
+flip_h = true
+_sections_unfolded = [ "Offset" ]
+
+[node name="small_grass15" type="Sprite" parent="." index="80"]
+
+position = Vector2( 1238.55, 287.421 )
+texture = ExtResource( 11 )
+flip_h = true
+_sections_unfolded = [ "Offset" ]
+
+[node name="small_grass17" type="Sprite" parent="." index="81"]
+
+modulate = Color( 0.803497, 0.882812, 0.873518, 1 )
+position = Vector2( 1195.55, 273.421 )
+scale = Vector2( 0.4, 0.4 )
+texture = ExtResource( 11 )
+flip_h = true
+_sections_unfolded = [ "Offset" ]
+
+[node name="small_grass25" type="Sprite" parent="." index="82"]
+
+modulate = Color( 0.803497, 0.882812, 0.873518, 1 )
+position = Vector2( 1215.55, 276.421 )
+scale = Vector2( 0.4, 0.4 )
+texture = ExtResource( 11 )
+flip_h = true
+_sections_unfolded = [ "Offset" ]
+
+[node name="small_grass21" type="Sprite" parent="." index="83"]
+
+modulate = Color( 0.803497, 0.882812, 0.873518, 1 )
+position = Vector2( 1195.55, 273.421 )
+scale = Vector2( 0.4, 0.4 )
+texture = ExtResource( 11 )
+flip_h = true
+_sections_unfolded = [ "Offset" ]
+
+[node name="small_grass29" type="Sprite" parent="." index="84"]
+
+modulate = Color( 0.803497, 0.882812, 0.873518, 1 )
+position = Vector2( 1215.55, 276.421 )
+scale = Vector2( 0.4, 0.4 )
+texture = ExtResource( 11 )
+flip_h = true
+_sections_unfolded = [ "Offset" ]
+
+[node name="small_grass1" type="Sprite" parent="." index="85"]
+
+position = Vector2( 402.83, 274.924 )
+texture = ExtResource( 11 )
+
+[node name="small_grass5" type="Sprite" parent="." index="86"]
+
+position = Vector2( 522.83, 314.924 )
+texture = ExtResource( 11 )
+
+[node name="small_grass3" type="Sprite" parent="." index="87"]
+
+position = Vector2( 485.161, 260.222 )
+texture = ExtResource( 12 )
+
+[node name="small_grass4" type="Sprite" parent="." index="88"]
+
+position = Vector2( 705.161, 273.222 )
+texture = ExtResource( 12 )
+
+[node name="colum_thin" type="Sprite" parent="." index="89"]
+
+position = Vector2( 567.491, 205.826 )
+texture = ExtResource( 13 )
+
+[node name="rock" type="StaticBody2D" parent="." index="90"]
 
 editor/display_folded = true
 input_pickable = false
@@ -215,7 +665,7 @@ bounce = 0.0
 [node name="bigRock" type="Sprite" parent="rock" index="0"]
 
 position = Vector2( 263.712, 275.9 )
-texture = ExtResource( 12 )
+texture = ExtResource( 14 )
 _sections_unfolded = [ "Z Index" ]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="rock" index="1"]
@@ -224,7 +674,7 @@ position = Vector2( 265.21, 274.32 )
 scale = Vector2( 1.69401, 0.980299 )
 shape = SubResource( 1 )
 
-[node name="rock2" type="StaticBody2D" parent="." index="33"]
+[node name="rock2" type="StaticBody2D" parent="." index="91"]
 
 editor/display_folded = true
 input_pickable = false
@@ -239,30 +689,352 @@ bounce = 0.0
 
 position = Vector2( 438.043, 260.859 )
 scale = Vector2( 0.5, 0.5 )
-texture = ExtResource( 12 )
+texture = ExtResource( 14 )
 _sections_unfolded = [ "Z Index" ]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="rock2" index="1"]
 
-position = Vector2( 436.257, 259.279 )
+position = Vector2( 438.018, 261.92 )
 scale = Vector2( 0.75254, 0.5 )
 shape = SubResource( 1 )
 
-[node name="Seed" parent="." index="34" instance=ExtResource( 13 )]
+[node name="rock9" type="StaticBody2D" parent="." index="92"]
+
+editor/display_folded = true
+position = Vector2( 312, 5 )
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+
+[node name="bigRock" type="Sprite" parent="rock9" index="0"]
+
+position = Vector2( 438.043, 260.859 )
+scale = Vector2( 0.5, 0.5 )
+texture = ExtResource( 14 )
+_sections_unfolded = [ "Z Index" ]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="rock9" index="1"]
+
+position = Vector2( 438.018, 261.92 )
+scale = Vector2( 0.75254, 0.5 )
+shape = SubResource( 1 )
+
+[node name="Seed" parent="." index="93" instance=ExtResource( 15 )]
 
 position = Vector2( 566.99, 138.081 )
 
-[node name="Music" type="AudioStreamPlayer" parent="." index="35"]
+[node name="Music" type="AudioStreamPlayer" parent="." index="94"]
 
-stream = ExtResource( 14 )
+stream = ExtResource( 16 )
 volume_db = 0.0
 pitch_scale = 1.0
 autoplay = false
 mix_target = 0
 bus = "Master"
 
+[node name="rock10" type="StaticBody2D" parent="." index="95"]
+
+editor/display_folded = true
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+
+[node name="rock4" type="Sprite" parent="rock10" index="0"]
+
+position = Vector2( 838.249, 306.48 )
+texture = ExtResource( 17 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="rock10" index="1"]
+
+position = Vector2( 836.14, 308.065 )
+scale = Vector2( 1.45341, 1.3751 )
+shape = SubResource( 2 )
+
+[node name="rock11" type="StaticBody2D" parent="." index="96"]
+
+editor/display_folded = true
+position = Vector2( 90, -35 )
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="rock4" type="Sprite" parent="rock11" index="0"]
+
+position = Vector2( 838.249, 306.48 )
+texture = ExtResource( 17 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="rock11" index="1"]
+
+position = Vector2( 836.14, 308.065 )
+scale = Vector2( 1.45341, 1.3751 )
+shape = SubResource( 2 )
+
+[node name="rock12" type="StaticBody2D" parent="." index="97"]
+
+editor/display_folded = true
+position = Vector2( 155, -22 )
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="rock4" type="Sprite" parent="rock12" index="0"]
+
+position = Vector2( 838.249, 306.48 )
+texture = ExtResource( 17 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="rock12" index="1"]
+
+position = Vector2( 836.14, 308.065 )
+scale = Vector2( 1.45341, 1.3751 )
+shape = SubResource( 2 )
+
+[node name="tallRock1" type="StaticBody2D" parent="." index="98"]
+
+editor/display_folded = true
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="rock1" type="Sprite" parent="tallRock1" index="0"]
+
+position = Vector2( 944.249, 230.48 )
+z_index = -1
+texture = ExtResource( 18 )
+_sections_unfolded = [ "Z Index" ]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="tallRock1" index="1"]
+
+position = Vector2( 944.24, 233.821 )
+scale = Vector2( 1.26066, 1.87828 )
+shape = SubResource( 3 )
+
+[node name="tallRock3" type="StaticBody2D" parent="." index="99"]
+
+editor/display_folded = true
+position = Vector2( 140, 0 )
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="rock1" type="Sprite" parent="tallRock3" index="0"]
+
+position = Vector2( 944.249, 230.48 )
+z_index = -1
+texture = ExtResource( 18 )
+_sections_unfolded = [ "Z Index" ]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="tallRock3" index="1"]
+
+position = Vector2( 944.24, 233.821 )
+scale = Vector2( 1.26066, 1.87828 )
+shape = SubResource( 3 )
+
+[node name="tallRock6" type="StaticBody2D" parent="." index="100"]
+
+editor/display_folded = true
+position = Vector2( 160, -27 )
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="rock1" type="Sprite" parent="tallRock6" index="0"]
+
+position = Vector2( 944.249, 230.48 )
+z_index = -1
+texture = ExtResource( 18 )
+_sections_unfolded = [ "Z Index" ]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="tallRock6" index="1"]
+
+position = Vector2( 944.24, 233.821 )
+scale = Vector2( 1.26066, 1.87828 )
+shape = SubResource( 3 )
+
+[node name="tallRock7" type="StaticBody2D" parent="." index="101"]
+
+editor/display_folded = true
+position = Vector2( 182, -44 )
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="rock1" type="Sprite" parent="tallRock7" index="0"]
+
+position = Vector2( 944.249, 230.48 )
+z_index = -1
+texture = ExtResource( 18 )
+_sections_unfolded = [ "Z Index" ]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="tallRock7" index="1"]
+
+position = Vector2( 944.24, 233.821 )
+scale = Vector2( 1.26066, 1.87828 )
+shape = SubResource( 3 )
+
+[node name="tallRock5" type="StaticBody2D" parent="." index="102"]
+
+editor/display_folded = true
+position = Vector2( 163, 6 )
+scale = Vector2( 1.5, 1.5 )
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+_sections_unfolded = [ "Transform", "Z Index" ]
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="rock1" type="Sprite" parent="tallRock5" index="0"]
+
+position = Vector2( 944.249, 230.48 )
+z_index = -1
+texture = ExtResource( 18 )
+_sections_unfolded = [ "Z Index" ]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="tallRock5" index="1"]
+
+position = Vector2( 944.24, 233.821 )
+scale = Vector2( 1.26066, 1.87828 )
+shape = SubResource( 3 )
+
+[node name="tallRock2" type="StaticBody2D" parent="." index="103"]
+
+editor/display_folded = true
+position = Vector2( 150, 33 )
+z_index = 2
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+_sections_unfolded = [ "Z Index" ]
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="rock1" type="Sprite" parent="tallRock2" index="0"]
+
+position = Vector2( 964.102, 218.74 )
+scale = Vector2( 2.04487, 1.30103 )
+z_index = -1
+texture = ExtResource( 18 )
+_sections_unfolded = [ "Z Index" ]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="tallRock2" index="1"]
+
+position = Vector2( 944.24, 233.821 )
+scale = Vector2( 1.26066, 1.87828 )
+shape = SubResource( 3 )
+
+[node name="tallRock4" type="StaticBody2D" parent="." index="104"]
+
+editor/display_folded = true
+position = Vector2( 216, -11.9999 )
+z_index = -1
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+_sections_unfolded = [ "Z Index" ]
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="rock1" type="Sprite" parent="tallRock4" index="0"]
+
+position = Vector2( 996.419, 170.859 )
+scale = Vector2( 2.0434, 2.19242 )
+z_index = -1
+texture = ExtResource( 19 )
+_sections_unfolded = [ "Z Index" ]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="tallRock4" index="1"]
+
+position = Vector2( 996.934, 196.647 )
+scale = Vector2( 7.59466, 4.23094 )
+shape = SubResource( 3 )
+
+[node name="snake" parent="." index="105" instance=ExtResource( 20 )]
+
+position = Vector2( 446.419, 304.299 )
+
+[node name="snake2" parent="." index="106" instance=ExtResource( 20 )]
+
+position = Vector2( 898.148, 289.615 )
+scale = Vector2( 0.741551, 0.833865 )
+
+[node name="Caravan" parent="." index="107" instance=ExtResource( 21 )]
+
+[node name="Player" parent="." index="108" instance=ExtResource( 2 )]
+
+position = Vector2( 66.1517, 268.088 )
+scale = Vector2( 1.98069, 2.01971 )
+z_index = 1
+_sections_unfolded = [ "Transform", "Visibility", "Z Index" ]
+
 [connection signal="seedCollisionEnter" from="Seed" to="." method="_on_Seed_seedCollisionEnter"]
 
 [connection signal="seedCollisionExit" from="Seed" to="." method="_on_Seed_seedCollisionExit"]
+
+[connection signal="stopCaravan" from="Caravan" to="." method="_on_Caravan_stopCaravan"]
 
 

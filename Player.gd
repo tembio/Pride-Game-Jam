@@ -10,7 +10,6 @@ const speed = 100
 
 func _ready():
     screensize = get_viewport_rect().size
-    position = Vector2(10, screensize.y-GROUND_LEVEL)
 
 func _process(delta):
     var direction = Vector2(0,0)
