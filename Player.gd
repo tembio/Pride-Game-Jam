@@ -1,36 +1,32 @@
-extends Area2D
+extends KinematicBody2D
 
-export (int) var speed
 onready var sprite = get_node("sprite")
 var screensize
 var lookingForward = true
 var animation = "idle"
 var GROUND_LEVEL = 50
 var isFlying = false
-
+const speed = 100
 
 func _ready():
     screensize = get_viewport_rect().size
     position = Vector2(10, screensize.y-GROUND_LEVEL)
 
 func _process(delta):
-    var velocity = Vector2() # The player's movement vector.
-    
-    if Input.is_action_pressed("ui_right"):
-        lookingForward = true
-        velocity.x += 1
-    if Input.is_action_pressed("ui_left"):
-        lookingForward = false        
-        velocity.x -= 1
-    if Input.is_action_pressed("ui_down"):
-        velocity.y += 1
-    if Input.is_action_pressed("ui_up"):
-        velocity.y -= 1
+    var direction = Vector2(0,0)
+    if ( Input.is_action_pressed("ui_up") ):
+        direction += Vector2(0,-1)
+    if ( Input.is_action_pressed("ui_down") ):
+        direction += Vector2(0,1)
+    if ( Input.is_action_pressed("ui_left") ):
+        lookingForward=false
+        direction += Vector2(-1,0)
+    if ( Input.is_action_pressed("ui_right") ):
+        lookingForward=true       
+        direction += Vector2(1,0)
         
-    if velocity.length() > 0:
-        velocity = velocity.normalized() * speed
-        position += velocity * delta
-        position.x = clamp(position.x, 0, screensize.x)
+    if direction.length() > 0:
+        move_and_collide( direction * speed * delta)
         position.y = clamp(position.y, 0, screensize.y)
         animation = "walk"
     
@@ -48,3 +44,12 @@ func _process(delta):
 
 func _on_sprite_animation_finished():
     animation = "idle"   
+
+func _on_Area2D_body_entered(body):
+    print("Collision")
+
+func _on_Player_body_entered(body):
+    if body.position.x < position.x:
+        print("object at left")
+    else:
+        print("object at right")

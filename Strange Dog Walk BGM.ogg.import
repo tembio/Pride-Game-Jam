@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/Strange Dog Walk BGM.ogg-256cb6c425a8bbcaf81031be6735f134.oggstr"
+
+[deps]
+
+source_file="res://Strange Dog Walk BGM.ogg"
+dest_files=[ "res://.import/Strange Dog Walk BGM.ogg-256cb6c425a8bbcaf81031be6735f134.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

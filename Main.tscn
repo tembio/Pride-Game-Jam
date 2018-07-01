@@ -1,16 +1,25 @@
-[gd_scene load_steps=12 format=2]
+[gd_scene load_steps=16 format=2]
 
 [ext_resource path="res://Main.gd" type="Script" id=1]
 [ext_resource path="res://Player.tscn" type="PackedScene" id=2]
 [ext_resource path="res://sprites/Ground_2.png" type="Texture" id=3]
-[ext_resource path="res://sprites/sky.png" type="Texture" id=4]
-[ext_resource path="res://sprites/gate.png" type="Texture" id=5]
-[ext_resource path="res://sprites/column.png" type="Texture" id=6]
-[ext_resource path="res://sprites/bigRock.png" type="Texture" id=7]
+[ext_resource path="res://sprites/grassyFloor.png" type="Texture" id=4]
+[ext_resource path="res://sprites/sky.png" type="Texture" id=5]
+[ext_resource path="res://sprites/gate.png" type="Texture" id=6]
+[ext_resource path="res://sprites/column.png" type="Texture" id=7]
 [ext_resource path="res://sprites/grass.png" type="Texture" id=8]
 [ext_resource path="res://sprites/grass_small1.png" type="Texture" id=9]
 [ext_resource path="res://sprites/grass_small2.png" type="Texture" id=10]
 [ext_resource path="res://sprites/column_thin.png" type="Texture" id=11]
+[ext_resource path="res://sprites/bigRock.png" type="Texture" id=12]
+[ext_resource path="res://Seed.tscn" type="PackedScene" id=13]
+[ext_resource path="res://Slightly mysterious BGM.ogg" type="AudioStream" id=14]
+
+[sub_resource type="CapsuleShape2D" id=1]
+
+custom_solver_bias = 0.0
+radius = 10.7524
+height = 20.0
 
 [node name="Node" type="Node" index="0"]
 
@@ -58,86 +67,202 @@ texture = ExtResource( 3 )
 position = Vector2( 448.962, 293.788 )
 texture = ExtResource( 3 )
 
-[node name="Sprite9" type="Sprite" parent="." index="8"]
+[node name="Sprite15" type="Sprite" parent="." index="8"]
+
+position = Vector2( 748.962, 293.788 )
+texture = ExtResource( 3 )
+
+[node name="Sprite9" type="Sprite" parent="." index="9"]
 
 position = Vector2( 508.962, 293.788 )
 texture = ExtResource( 3 )
 
-[node name="Sprite10" type="Sprite" parent="." index="9"]
+[node name="Sprite16" type="Sprite" parent="." index="10"]
+
+position = Vector2( 808.962, 293.788 )
+texture = ExtResource( 3 )
+
+[node name="Sprite10" type="Sprite" parent="." index="11"]
 
 position = Vector2( 568.962, 293.788 )
 texture = ExtResource( 3 )
 
-[node name="Sprite11" type="Sprite" parent="." index="10"]
+[node name="Sprite13" type="Sprite" parent="." index="12"]
+
+position = Vector2( 868.962, 293.788 )
+texture = ExtResource( 4 )
+
+[node name="Sprite18" type="Sprite" parent="." index="13"]
+
+position = Vector2( 1048.36, 293.788 )
+texture = ExtResource( 3 )
+
+[node name="Sprite22" type="Sprite" parent="." index="14"]
+
+position = Vector2( 1228.36, 293.788 )
+texture = ExtResource( 3 )
+
+[node name="Sprite11" type="Sprite" parent="." index="15"]
 
 position = Vector2( 628.962, 293.788 )
 texture = ExtResource( 3 )
 
-[node name="Sprite6" type="Sprite" parent="." index="11"]
+[node name="Sprite14" type="Sprite" parent="." index="16"]
+
+position = Vector2( 928.962, 293.788 )
+texture = ExtResource( 3 )
+
+[node name="Sprite19" type="Sprite" parent="." index="17"]
+
+position = Vector2( 1108.36, 293.788 )
+texture = ExtResource( 3 )
+
+[node name="Sprite21" type="Sprite" parent="." index="18"]
+
+position = Vector2( 1288.36, 293.788 )
+texture = ExtResource( 3 )
+
+[node name="Sprite12" type="Sprite" parent="." index="19"]
+
+position = Vector2( 688.962, 293.788 )
+texture = ExtResource( 3 )
+
+[node name="Sprite17" type="Sprite" parent="." index="20"]
+
+position = Vector2( 988.962, 293.788 )
+texture = ExtResource( 4 )
+
+[node name="Sprite20" type="Sprite" parent="." index="21"]
+
+position = Vector2( 1168.36, 293.788 )
+texture = ExtResource( 3 )
+
+[node name="Sprite6" type="Sprite" parent="." index="22"]
 
 position = Vector2( 268.962, 293.788 )
 texture = ExtResource( 3 )
 
-[node name="Sky" type="Sprite" parent="." index="12"]
+[node name="Sky" type="Sprite" parent="." index="23"]
 
 position = Vector2( 321.25, 136.683 )
 scale = Vector2( 2.5519, 2.27442 )
 z_index = -1
-texture = ExtResource( 4 )
+texture = ExtResource( 5 )
 _sections_unfolded = [ "Z Index" ]
 __meta__ = {
 "_edit_group_": true
 }
 
-[node name="gate" type="Sprite" parent="." index="13"]
+[node name="Sky2" type="Sprite" parent="." index="24"]
+
+position = Vector2( 974.133, 135.683 )
+scale = Vector2( 2.5519, 2.27442 )
+z_index = -1
+texture = ExtResource( 5 )
+_sections_unfolded = [ "Z Index" ]
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="gate" type="Sprite" parent="." index="25"]
 
 position = Vector2( 83.771, 175.873 )
 scale = Vector2( 1.2, 1.2 )
-texture = ExtResource( 5 )
+texture = ExtResource( 6 )
 _sections_unfolded = [ "Transform" ]
 
-[node name="column" type="Sprite" parent="." index="14"]
+[node name="column" type="Sprite" parent="." index="26"]
 
 position = Vector2( 224.931, 229.363 )
-texture = ExtResource( 6 )
-
-[node name="bigRock" type="Sprite" parent="." index="15"]
-
-position = Vector2( 263.712, 275.9 )
 texture = ExtResource( 7 )
-_sections_unfolded = [ "Z Index" ]
 
-[node name="bigRock2" type="Sprite" parent="." index="16"]
-
-position = Vector2( 431.492, 260.7 )
-scale = Vector2( 0.728485, 0.561972 )
-z_index = 1
-texture = ExtResource( 7 )
-_sections_unfolded = [ "Z Index" ]
-
-[node name="grass1" type="Sprite" parent="." index="17"]
+[node name="grass1" type="Sprite" parent="." index="27"]
 
 position = Vector2( 158.84, 305.948 )
 texture = ExtResource( 8 )
 
-[node name="small_grass2" type="Sprite" parent="." index="18"]
+[node name="small_grass2" type="Sprite" parent="." index="28"]
 
 position = Vector2( 342.553, 287.421 )
 texture = ExtResource( 9 )
 
-[node name="small_grass1" type="Sprite" parent="." index="19"]
+[node name="small_grass1" type="Sprite" parent="." index="29"]
 
 position = Vector2( 402.83, 274.924 )
 texture = ExtResource( 9 )
 
-[node name="small_grass3" type="Sprite" parent="." index="20"]
+[node name="small_grass3" type="Sprite" parent="." index="30"]
 
 position = Vector2( 485.161, 260.222 )
 texture = ExtResource( 10 )
 
-[node name="colum_thin" type="Sprite" parent="." index="21"]
+[node name="colum_thin" type="Sprite" parent="." index="31"]
 
 position = Vector2( 567.491, 205.826 )
 texture = ExtResource( 11 )
+
+[node name="rock" type="StaticBody2D" parent="." index="32"]
+
+editor/display_folded = true
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+
+[node name="bigRock" type="Sprite" parent="rock" index="0"]
+
+position = Vector2( 263.712, 275.9 )
+texture = ExtResource( 12 )
+_sections_unfolded = [ "Z Index" ]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="rock" index="1"]
+
+position = Vector2( 265.21, 274.32 )
+scale = Vector2( 1.69401, 0.980299 )
+shape = SubResource( 1 )
+
+[node name="rock2" type="StaticBody2D" parent="." index="33"]
+
+editor/display_folded = true
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+
+[node name="bigRock" type="Sprite" parent="rock2" index="0"]
+
+position = Vector2( 438.043, 260.859 )
+scale = Vector2( 0.5, 0.5 )
+texture = ExtResource( 12 )
+_sections_unfolded = [ "Z Index" ]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="rock2" index="1"]
+
+position = Vector2( 436.257, 259.279 )
+scale = Vector2( 0.75254, 0.5 )
+shape = SubResource( 1 )
+
+[node name="Seed" parent="." index="34" instance=ExtResource( 13 )]
+
+position = Vector2( 566.99, 138.081 )
+
+[node name="Music" type="AudioStreamPlayer" parent="." index="35"]
+
+stream = ExtResource( 14 )
+volume_db = 0.0
+pitch_scale = 1.0
+autoplay = false
+mix_target = 0
+bus = "Master"
+
+[connection signal="seedCollisionEnter" from="Seed" to="." method="_on_Seed_seedCollisionEnter"]
+
+[connection signal="seedCollisionExit" from="Seed" to="." method="_on_Seed_seedCollisionExit"]
 
 
